@@ -2,22 +2,22 @@ import User from "../models/user.js";
 
 async function setBalance(req, res) {
   try {
-    const initialBalace = req.body.initialBalace;
+    const initialBalance = req.body.initialBalance;
     if (
-      !initialBalace ||
-      typeof initialBalace !== "number" ||
-      initialBalace < 0
+      !initialBalance ||
+      typeof initialBalance !== "number" ||
+      initialBalance < 0
     ) {
       return res.status(400).json({ message: "incorrect initial balance" });
     }
 
     const user = new User({
-      initialBalace,
-      currentBalance: initialBalace,
+      initialBalance,
+      currentBalance: initialBalance,
       transaction: [],
     });
 
-    user.save();
+    await user.save();
     res.status(201).json({
       message: "user was created",
       data: user,
