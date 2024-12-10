@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import transactionSchema from "./transaction";
+import transactionSchema from "./transaction.js";
 const userSchema = new mongoose.Schema({
   initialBalance: {
     type: Number,
