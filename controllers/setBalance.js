@@ -23,7 +23,9 @@ async function setBalance(req, res) {
       data: user,
     });
   } catch (err) {
-    res.status(500).json({ message: "server error. try again" });
+    res
+      .status(500)
+      .json({ message: "server error. try again", error: err.message });
   }
 }
 
