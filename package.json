@@ -16,5 +16,9 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.8.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0"
   }
 }
